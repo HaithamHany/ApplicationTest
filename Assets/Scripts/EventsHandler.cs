@@ -1,18 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EventsHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static EventsHandler Instance;
+
+    private void Awake()
     {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public event Action<int> OnActivatingObject;
+
+    public void ActivatingObject(int objId)
     {
-        
+        if(OnActivatingObject != null)
+        {
+            OnActivatingObject(objId);
+        }
     }
 }
