@@ -1,18 +1,60 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private int nextButtonIndex = 0;
+    [SerializeField] private int preveButtonIndex = 0;
+
+    private const float FADING_DURATION = 1.5f;
+    private Coroutine routine;
+
+    private void Start()
     {
-        
+        routine = StartCoroutine(Fade());
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadNext()
     {
-        
+       StopCoroutine(routine);
+       routine =  StartCoroutine(Fade(true, LoadNextScene));
+    }
+
+    public void LoadPrev()
+    {
+        StopCoroutine(routine);
+        routine = StartCoroutine(Fade(true, LoadPrevScene));
+    }
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(nextButtonIndex);
+    }
+
+    private void LoadPrevScene()
+    {
+        SceneManager.LoadScene(preveButtonIndex);
+    }
+
+    private IEnumerator Fade(bool isFadeIn = false, Action loadSceneCallBack = null)
+    {
+        var fadeToValue = isFadeIn ? 0 : 1;
+        var startValue = canvasGroup.alpha;
+        var time = 0f;
+        while (time < FADING_DURATION)
+        {
+            canvasGroup.alpha = Mathf.Lerp(startValue, fadeToValue, time / FADING_DURATION);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        canvasGroup.alpha = fadeToValue;
+
+        if(loadSceneCallBack != null)
+        {
+            loadSceneCallBack.Invoke();
+        }
     }
 }
