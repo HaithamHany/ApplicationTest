@@ -13,8 +13,8 @@ EditorBuildSettings:
     guid: 5e38dbaf3b7522a439c1016331d2b4fb
   - enabled: 1
     path: Assets/Scenes/ContentScene02.unity
-    guid: 4e0cc093152e1dc418dd257e3e72c852
+    guid: 8b80ae18c4b85b243a209d4d53a23a82
   - enabled: 1
     path: Assets/Scenes/ContentScene03.unity
-    guid: e9991d33614820040812fa09878bd472
+    guid: ee43e09c4a77a7740bc98ca073112690
   m_configObjects: {}
