@@ -10,6 +10,8 @@ public class SceneObject : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI lable;
     [SerializeField] private RawImage image;
     [SerializeField] private ObjectDisplay objectDisplay;
+    [SerializeField] private ParticleSystem visualEffect; 
+
     private int id;
 
     private void OnEnable()
@@ -23,6 +25,13 @@ public class SceneObject : MonoBehaviour, IPointerClickHandler
     {
         lable.gameObject.SetActive(id == this.id);
         image.color = (id != this.id)? Color.black: Color.white;
+
+        if(id != this.id)
+        {
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            visualEffect.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+            visualEffect.Play();
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
