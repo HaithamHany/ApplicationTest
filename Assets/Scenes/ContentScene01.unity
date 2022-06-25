@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lable: {fileID: 586527041}
   image: {fileID: 46139028}
+  objectDisplay: {fileID: 1383645940}
 --- !u!1 &71456307
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +328,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215125382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3806291689650864476, guid: cf9f912046b393542b7dbe8fd2f7b9b2, type: 3}
+  m_PrefabInstance: {fileID: 4744533557925191381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91c3847133a1d14db19ff93936e73e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &224804255
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lable: {fileID: 1185774851}
   image: {fileID: 224804257}
+  objectDisplay: {fileID: 215125382}
 --- !u!1 &496336760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1069,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1095720451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3792048985000220458, guid: cce1005811942b94a8d06a194fbafa82, type: 3}
+  m_PrefabInstance: {fileID: 7575077746736685648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91c3847133a1d14db19ff93936e73e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130103388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1467,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1383645940 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5094798106221248094, guid: 9ae13cb8e3ab8a64ba94b7bff5cf21ad, type: 3}
+  m_PrefabInstance: {fileID: 2874556537807091539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91c3847133a1d14db19ff93936e73e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1719560517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,6 +1567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lable: {fileID: 1855495222}
   image: {fileID: 1719560519}
+  objectDisplay: {fileID: 1095720451}
 --- !u!1 &1781410988
 GameObject:
   m_ObjectHideFlags: 0

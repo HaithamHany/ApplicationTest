@@ -21,12 +21,20 @@ public class EventsHandler : MonoBehaviour
     }
 
     public event Action<int> OnActivatingObject;
+    public event Action<int> OnDeactivatingObject;
 
     public void ActivatingObject(int objId)
     {
         if(OnActivatingObject != null)
         {
             OnActivatingObject(objId);
+        }
+    }
+    public void DeactivatingObject(int objId)
+    {
+        if (OnDeactivatingObject != null)
+        {
+            OnDeactivatingObject(objId);
         }
     }
 }

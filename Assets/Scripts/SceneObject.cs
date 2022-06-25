@@ -9,21 +9,20 @@ public class SceneObject : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private TextMeshProUGUI lable;
     [SerializeField] private RawImage image;
+    [SerializeField] private ObjectDisplay objectDisplay;
+    private int id;
 
     private void OnEnable()
     {
+        id = GetInstanceID();
         EventsHandler.Instance.OnActivatingObject += OnObjectActivated;
-    }
-    public void OnObjectActivated(int id)
-    {
-        lable.gameObject.SetActive(id == this.GetInstanceID());
-        image.color = (id != this.GetInstanceID())? Color.black: Color.white;
+        objectDisplay.Init(id);
     }
 
-    public void OnObjectDeactivated()
+    public void OnObjectActivated(int id)
     {
-        lable.gameObject.SetActive(false);
-        image.color = Color.black;
+        lable.gameObject.SetActive(id == this.id);
+        image.color = (id != this.id)? Color.black: Color.white;
     }
 
     public void OnPointerClick(PointerEventData eventData)
