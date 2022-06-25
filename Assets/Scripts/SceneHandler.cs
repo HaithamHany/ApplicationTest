@@ -18,6 +18,12 @@ public class SceneHandler : MonoBehaviour
         routine = StartCoroutine(Fade());
     }
 
+    public void Home()
+    {
+        StopCoroutine(routine);
+        routine = StartCoroutine(Fade(true, LoadHome));
+    }
+
     public void LoadNext()
     {
        StopCoroutine(routine);
@@ -37,6 +43,11 @@ public class SceneHandler : MonoBehaviour
     private void LoadPrevScene()
     {
         SceneManager.LoadScene(preveButtonIndex);
+    }
+
+    private void LoadHome()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator Fade(bool isFadeIn = false, Action loadSceneCallBack = null)
